@@ -1,0 +1,40 @@
+/* designTokens.css - Variables de diseño premium */
+
+:root {
+  /* Paleta de colores HSL */
+  --color-primary: hsl(210, 85%, 45%);   /* azul profundo */
+  --color-primary-light: hsl(210, 85%, 55%);
+  --color-primary-dark: hsl(210, 85%, 35%);
+  --color-accent: hsl(340, 80%, 55%);   /* magenta vibrante */
+  --color-bg: hsl(210, 20%, 10%);       /* fondo oscuro */
+  --color-surface: hsla(210, 20%, 20%, 0.85); /* surface con glass */
+  --color-text: hsl(0, 0%, 95%);
+  --color-muted: hsl(210, 10%, 50%);
+
+  /* Tipografía */
+  --font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-size-base: 1rem;
+  --font-weight-regular: 400;
+  --font-weight-medium: 600;
+
+  /* Sombras y bordes */
+  --shadow-elevated: 0 8px 30px rgba(0,0,0,0.12);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+}
+
+/* Reset básico */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+}

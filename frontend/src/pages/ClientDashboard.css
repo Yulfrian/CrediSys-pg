@@ -1,0 +1,311 @@
+/* ClientDashboard.css */
+
+.client-dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  width: 100%;
+}
+
+.client-header {
+  margin-bottom: 0.5rem;
+}
+
+.client-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--color-text-title);
+  margin: 0 0 0.25rem 0;
+  letter-spacing: -0.02em;
+}
+
+.client-subtitle {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+/* Grillas */
+.client-metrics-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .client-metrics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.client-card {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+}
+
+/* primary card */
+.primary-card {
+  background: linear-gradient(to bottom right, #ffffff, #f8fafc);
+}
+
+.client-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.client-card-header h3 {
+  margin: 0;
+  color: var(--color-text-title);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.client-badge {
+  background-color: var(--color-success-light);
+  color: var(--color-success-dark);
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.client-saldo-enorme {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--color-primary-dark);
+  margin-bottom: 2rem;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+}
+
+.client-progress-container {
+  margin-top: auto;
+}
+
+.client-progress-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+}
+
+.client-progress-bar {
+  height: 8px;
+  background-color: #e2e8f0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 0.5rem;
+}
+
+.client-progress-fill {
+  height: 100%;
+  background-color: var(--color-primary);
+  border-radius: 4px;
+}
+
+.client-progress-text {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* highlight card */
+.highlight-card {
+  background-color: var(--color-primary-dark);
+  border-color: var(--color-primary-dark);
+  color: white;
+}
+
+.highlight-card h3 {
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+}
+
+.client-cuota-monto {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.client-cuota-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+}
+
+.client-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.95rem;
+}
+
+.client-detail-item strong {
+  color: white;
+  font-weight: 600;
+}
+
+.btn-pay-now {
+  background-color: var(--color-success);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  font-size: 1rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-top: auto;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.4);
+}
+
+.btn-pay-now:hover {
+  background-color: #059669; /* green-600 */
+  transform: translateY(-2px);
+}
+
+/* History Section */
+.client-history-section {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+}
+
+.client-history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.client-history-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: var(--color-text-title);
+}
+
+.btn-secondary-client {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: white;
+  border: 1px solid var(--color-border);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.client-table-container {
+  overflow-x: auto;
+}
+
+.client-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.client-table th {
+  text-align: left;
+  padding: 1rem;
+  background-color: #f8fafc;
+  color: var(--color-text-muted);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--color-border);
+}
+
+.client-table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--color-surface-soft);
+  color: var(--color-text-main);
+  font-size: 0.95rem;
+}
+
+.row-paid td {
+  background-color: #f8fafc;
+  opacity: 0.8;
+}
+
+.monto-cell {
+  font-weight: 700;
+}
+
+.status-badge {
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.status-paid { background-color: var(--color-success-light); color: var(--color-success-dark); }
+.status-pending { background-color: var(--color-warning-light); color: var(--color-warning-dark); }
+.status-partial { background-color: #E0E7FF; color: #4338CA; } /* Indigo */
+
+.btn-table-pay {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-full);
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-table-pay:hover {
+  background-color: var(--color-primary);
+  color: white;
+}
+
+.btn-table-receipt {
+  background: none;
+  border: none;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  padding: 0.4rem;
+  border-radius: var(--radius-md);
+}
+
+.btn-table-receipt:hover {
+  background-color: var(--color-surface-soft);
+  color: var(--color-primary);
+}
+
+/* Loading y Vacío */
+.client-loading, .client-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.client-empty-icon {
+  color: var(--color-success);
+  margin-bottom: 1rem;
+}

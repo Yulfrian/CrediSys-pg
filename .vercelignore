@@ -1,0 +1,4 @@
+docs/
+*.zip
+logo*.png
+.gemini/

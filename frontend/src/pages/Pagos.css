@@ -1,0 +1,285 @@
+/* Pagos.css - Optimizado al UI Kit Core */
+
+.pagos-container {
+  padding: 1.5rem 2rem;
+  width: 100%;
+}
+
+.pagos-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.layout-grid {
+  display: grid;
+  /* El buscador tomará un min de 320px y el cronograma el resto de la pantalla para simetría responsiva */
+  grid-template-columns: minmax(320px, 1fr) 2.5fr;
+  gap: 1.5rem;
+  height: calc(100vh - 180px);
+}
+
+.panel {
+  background-color: var(--color-surface);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border);
+}
+
+/* Panel Izquierdo */
+.search-bar {
+  padding: 1.2rem;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  background-color: var(--color-background);
+}
+.search-icon { color: var(--color-text-muted); }
+.search-bar input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 0.95rem;
+  outline: none;
+  color: var(--color-text-main);
+  font-family: inherit;
+}
+
+.lista-prestamos {
+  overflow-y: auto;
+  flex: 1;
+}
+
+.prestamo-card {
+  padding: 1.2rem;
+  border-bottom: 1px solid var(--color-surface-soft);
+  cursor: pointer;
+  transition: background-color var(--transition-fast);
+}
+.prestamo-card:hover { background-color: var(--color-surface-soft); }
+.prestamo-card.active {
+  background-color: var(--color-primary-light);
+  border-left: 4px solid var(--color-primary);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+.card-header strong {
+  font-size: 1.05rem;
+  color: var(--color-text-title);
+}
+
+.card-details {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+/* Cronograma Panel Derecho */
+.cronograma-container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.cronograma-header {
+  padding: 1.2rem 2rem;
+  background-color: var(--color-background);
+  border-bottom: 1px solid var(--color-border);
+}
+.cronograma-header h2 {
+  margin: 0 0 0.3rem 0;
+  color: var(--color-text-title);
+  font-size: 1.25rem;
+}
+.cliente-info {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.cuotas-list {
+  padding: 1.5rem 2rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Diseño de cada Cuota Elevado */
+.cuota-item {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr 1.2fr;
+  align-items: center;
+  padding: 1.2rem 1.5rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-normal);
+}
+
+.cuota-item.current {
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.1);
+  background-color: var(--color-primary-light);
+}
+
+.cuota-item.pagada {
+  border-color: var(--color-success);
+  background-color: var(--color-success-light);
+  opacity: 0.85;
+}
+
+.cuota-item.parcial {
+  border-color: var(--color-warning);
+  background-color: var(--color-warning-light);
+}
+
+.cuota-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.cuota-numero {
+  font-weight: 700;
+  color: var(--color-text-title);
+  font-size: 1.1rem;
+}
+.cuota-vencimiento {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+
+.cuota-monto {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.4rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text-title);
+}
+
+.cuota-accion {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* Modal Pago */
+.modal-pago {
+  max-width: 450px !important;
+  border-radius: var(--radius-xl);
+}
+.pago-body {
+  padding: 1.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.summary-box {
+  background-color: var(--color-background);
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  text-align: center;
+  border: 1px solid var(--color-border);
+}
+
+.tipo-pago-toggle {
+  display: flex;
+  background-color: var(--color-background);
+  border-radius: var(--radius-md);
+  padding: 0.3rem;
+  border: 1px solid var(--color-border);
+}
+.tipo-pago-toggle button {
+  flex: 1;
+  border: none;
+  padding: 0.8rem;
+  background: transparent;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+}
+.tipo-pago-toggle button.active {
+  background-color: var(--color-surface);
+  color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Botón Desactivado Local */
+.btn-disabled-local {
+  background-color: var(--color-surface-soft);
+  color: var(--color-text-muted);
+  border: 1px solid var(--color-border);
+  padding: 0.65rem 1.4rem;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+/* Print Receipt Overlay */
+.receipt-overlay { background-color: rgba(15, 23, 42, 0.8); }
+
+.modal-recibo {
+  max-width: 400px !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.recibo-container {
+  background-color: white;
+  padding: 2.5rem 2rem;
+  border-radius: 4px; /* Recibos suelen ser rectos */
+  box-shadow: var(--shadow-xl);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.recibo-header { text-align: center; margin-bottom: 2rem; }
+.recibo-header h2 { margin: 0 0 0.5rem 0; font-size: 1.8rem; font-weight: 800; letter-spacing: 2px; color: black; }
+.recibo-header p { margin: 0; font-size: 0.9rem; color: #4b5563; font-weight: 600; }
+
+.recibo-body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  color: black;
+}
+.r-row { display: flex; justify-content: space-between; align-items: center; font-size: 0.95rem; }
+.r-divider { border: none; border-top: 1px dashed #d1d5db; margin: 0.5rem 0; }
+.r-total { margin-top: 1rem; font-size: 1.2rem; }
+
+.recibo-footer { text-align: center; margin-top: 2rem; font-size: 0.9rem; color: #6b7280; }
+
+/* Responsive Symmetry */
+@media (max-width: 1024px) {
+  .layout-grid {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .cuota-item {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .cuota-accion {
+    justify-content: flex-start;
+  }
+}

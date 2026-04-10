@@ -1,0 +1,248 @@
+/* Reportes.css - UI Polish */
+
+.reportes-wrapper {
+  padding: 1.5rem 2rem;
+  width: 100%;
+}
+
+.reportes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.dashboard-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* KPI Cards Fluidas */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Simetría escalable - Aumentado a 280px para que quepan millones */
+  gap: 1.5rem;
+}
+
+.kpi-card {
+  background-color: var(--color-surface);
+  padding: 1.25rem 1.5rem; /* Menos padding horizontal para dar más espacio al texto */
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+  position: relative;
+  overflow: hidden;
+}
+
+.kpi-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.kpi-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 4px;
+}
+
+.card-blue::before { background-color: var(--color-primary); }
+.card-green::before { background-color: var(--color-success); }
+.card-yellow::before { background-color: var(--color-warning); }
+.card-red::before { background-color: var(--color-danger); }
+
+.kpi-icon {
+  padding: 1rem;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-blue .kpi-icon { color: var(--color-primary); background-color: var(--color-primary-light); }
+.card-green .kpi-icon { color: var(--color-success-dark); background-color: var(--color-success-light); }
+.card-yellow .kpi-icon { color: var(--color-warning-dark); background-color: var(--color-warning-light); }
+.card-red .kpi-icon { color: var(--color-danger-dark); background-color: var(--color-danger-light); }
+
+.kpi-info {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.kpi-info h3 {
+  margin: 0;
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+}
+
+.kpi-value {
+  margin: 0.3rem 0;
+  /* Reducción dinámica agresiva para no cortar NUNCA los números en resoluciones raras */
+  font-size: clamp(1.1rem, 2vw, 1.5rem);
+  font-weight: 800;
+  color: var(--color-text-title);
+  white-space: nowrap; /* ESTRICTO: JAMÁS saltar al siguiente renglón el número 0 */
+  line-height: 1.2;
+}
+
+/* Modificación de la caja del header de Reportes para evitar botón gigante */
+.reportes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--color-border);
+  flex-wrap: wrap; /* Permitir que el botón caiga si no hay espacio */
+  gap: 1.5rem;
+}
+
+.reportes-header button {
+  flex: 0 0 auto;
+  width: max-content;
+  white-space: nowrap;
+}
+
+.kpi-value.rojo { color: var(--color-danger); }
+
+.kpi-subtext {
+  font-size: 0.8rem;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+/* Charts Grid */
+.charts-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+}
+
+.chart-box {
+  background-color: var(--color-surface);
+  padding: 1.5rem;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+}
+
+.chart-box h3 {
+  margin: 0 0 1.5rem 0;
+  color: var(--color-text-title);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.chart-container {
+  height: 300px;
+  min-height: 300px;
+  width: 100%;
+  min-width: 0; /* Prevents flex/grid blowout */
+}
+
+@media (max-width: 1024px) {
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Table Morosos */
+.table-box {
+  background-color: var(--color-surface);
+  padding: 1.5rem;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border);
+}
+
+.table-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.table-header h3 {
+  margin: 0;
+  color: var(--color-text-title);
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.morosos-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.morosos-table th, .morosos-table td {
+  padding: 1rem 1.2rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-surface-soft);
+  color: var(--color-text-main);
+}
+
+.morosos-table th {
+  background-color: var(--color-background);
+  color: var(--color-text-muted);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.monto-peligro {
+  font-weight: 700;
+  color: var(--color-danger);
+}
+
+.badge-error {
+  background-color: var(--color-danger-light);
+  color: var(--color-danger-dark);
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.badge-success {
+  background-color: var(--color-success-light);
+  color: var(--color-success-dark);
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  border: 1px solid rgba(16, 185, 129, 0.2);
+}
+
+.empty-state-list {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: var(--color-text-muted);
+}
+
+.empty-icon-green {
+  color: var(--color-success);
+  margin-bottom: 1rem;
+}
+
+.empty-state-list h4 {
+  margin: 0 0 0.5rem 0;
+  color: var(--color-success-dark);
+  font-size: 1.25rem;
+}
